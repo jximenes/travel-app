@@ -1,0 +1,40 @@
+.header {
+    background-color: rgb(194, 194, 194);
+    height: 150px;
+
+    @media (min-width: $break-small-width) {
+        background-color: rgb(194, 194, 194);
+        height: 90px;
+    }
+
+    .header-logo{
+        height: 60%;
+
+        @media (max-width: $break-small-width - 1) {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            top: 14px;
+        }
+
+        @media (min-width: $break-small-width) {
+            float: left;
+            height: 70%;
+            position: relative;
+            top: 15%;
+            left: 1%;
+        }
+    }
+
+    .header-title{
+        font-family: 'Pacifico', cursive;
+        color: black;
+        width: 100%;
+        text-align: center;
+        position: relative;
+        top: 20px;
+    }
+
+    
+}

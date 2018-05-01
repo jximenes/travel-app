@@ -1,0 +1,25 @@
+
+    <div class="image-container">
+        <img ng-src="{{product.image }}" />
+        <div class="overlay">
+            <span class="overlay-icon fas fa-search-plus"></span>
+        </div>
+    </div>
+    <div class="city">{{ product.city }}</div>
+    <div class="description">{{ product.description }}</div>
+    <div class="prices-container">
+        <div class="price-single">
+            <span></span>
+            <span class="price">{{product.price_single}}</span>
+        </div>
+        <div class="price-group">
+            <span></span>
+            <span class="price">{{product.price_group}}</span>
+        </div>
+        <div class="price-inc">
+            <span></span>
+            <span class="price">{{product.price_inc}}</span>
+        </div>
+    </div>
+    <a class="book" href="#">book now</a>
+

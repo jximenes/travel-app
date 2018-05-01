@@ -1,0 +1,61 @@
+//https://zellwk.com/blog/how-to-write-mobile-first-css/
+
+.products-block{
+
+    .block-header{
+        color:red;
+        height: 30px;
+        width: 100%;
+        margin-top: 15px;
+        margin-bottom: 15px;
+        .block-name{
+            display: table;
+            white-space: nowrap;
+            float: right;
+            font-family: 'Pacifico', cursive;
+
+            &:before {
+                border-top: 1px solid red;
+                content: '';
+                display: table-cell;
+                position: relative;
+                top: 1em;
+                width: 100%;
+              }
+              &:before { right: 0.5%; }
+        }
+    }
+
+    // Mostly fluid pattern
+    .boxing{
+        display: flex;
+        flex-wrap: wrap;
+
+        .product-box{
+            margin: 1%;
+            width: 96%;
+            height: 370px;
+            //display: flex;
+
+            @media screen and (min-width: 1025px) {
+                width: 16%;
+            }
+
+            @media screen and (max-width: 1024px) {
+                width: 21%;
+            }
+
+            @media screen and (max-width: 768px) {
+                width: 29%;
+            }
+
+            @media screen and (max-width: 480px) {
+                width: 46%;
+            }
+    
+            @media screen and (max-width: 320px) {
+                width: 96%;
+            }
+        }
+    }
+}
