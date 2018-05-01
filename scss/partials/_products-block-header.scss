@@ -1,0 +1,38 @@
+.products-block{
+
+    .block-header{
+        color:red;
+        height: 30px;
+        width: 100%;
+        margin-top: 15px;
+        margin-bottom: 15px;
+
+        &:hover .switch-layout{
+            display: block;
+            cursor: pointer;
+        }
+
+        .switch-layout{
+            position: absolute;
+            font-size: 16px;
+            display: none;
+        }
+
+        .block-name{
+            display: table;
+            white-space: nowrap;
+            float: right;
+            font-family: 'Pacifico', cursive;
+
+            &:before {
+                border-top: 1px solid red;
+                content: '';
+                display: table-cell;
+                position: relative;
+                top: 1em;
+                width: 100%;
+              }
+              &:before { right: 0.5%; }
+        }
+    }
+}

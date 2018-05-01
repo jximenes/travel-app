@@ -45,6 +45,15 @@
   margin-top: 15px;
   margin-bottom: 15px;
 }
+.products-block .block-header:hover .switch-layout {
+  display: block;
+  cursor: pointer;
+}
+.products-block .block-header .switch-layout {
+  position: absolute;
+  font-size: 16px;
+  display: none;
+}
 .products-block .block-header .block-name {
   display: table;
   white-space: nowrap;
@@ -62,69 +71,74 @@
 .products-block .block-header .block-name:before {
   right: 0.5%;
 }
-.products-block .boxing {
+
+.products-block .boxing-grid {
   display: flex;
   flex-wrap: wrap;
+  align-items: stretch;
 }
-.products-block .boxing .product-box {
+.products-block .boxing-grid .product-box-grid {
   margin: 1%;
   width: 96%;
-  height: 370px;
 }
 @media screen and (min-width: 1025px) {
-  .products-block .boxing .product-box {
+  .products-block .boxing-grid .product-box-grid {
     width: 16%;
   }
 }
 @media screen and (max-width: 1024px) {
-  .products-block .boxing .product-box {
+  .products-block .boxing-grid .product-box-grid {
     width: 21%;
   }
 }
 @media screen and (max-width: 768px) {
-  .products-block .boxing .product-box {
+  .products-block .boxing-grid .product-box-grid {
     width: 29%;
   }
 }
 @media screen and (max-width: 480px) {
-  .products-block .boxing .product-box {
+  .products-block .boxing-grid .product-box-grid {
     width: 46%;
   }
 }
 @media screen and (max-width: 320px) {
-  .products-block .boxing .product-box {
+  .products-block .boxing-grid .product-box-grid {
     width: 96%;
   }
 }
 
-.product-box {
+.products-block .boxing-list {
+  display: block;
+}
+
+.product-box-grid {
   display: block;
   text-align: center;
   position: relative;
 }
-.product-box:hover .image-container .overlay {
+.product-box-grid:hover .image-container .overlay {
   opacity: 1;
 }
-.product-box:hover {
+.product-box-grid:hover {
   box-shadow: inset 0 0 0 1px rgba(214, 214, 214, 0.5);
 }
-.product-box:hover .prices-container {
-  display: flex;
+.product-box-grid:hover .info-container .prices-container {
+  visibility: visible;
 }
-.product-box:hover .book {
-  display: inline-block;
+.product-box-grid:hover .book {
+  visibility: visible;
 }
-.product-box .image-container {
+.product-box-grid .image-container {
   position: relative;
   width: 100%;
 }
-.product-box .image-container img {
+.product-box-grid .image-container img {
   width: 100%;
   height: auto;
   -webkit-clip-path: polygon(50% 0%, 100% 0, 100% 100%, 55% 100%, 50% 96%, 45% 100%, 0 100%, 0 0);
   clip-path: polygon(50% 0%, 100% 0, 100% 100%, 55% 100%, 50% 96%, 45% 100%, 0 100%, 0 0);
 }
-.product-box .image-container .overlay {
+.product-box-grid .image-container .overlay {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -136,7 +150,7 @@
   transition: 0.3s ease;
   background-color: rgba(17, 0, 0, 0.398);
 }
-.product-box .image-container .overlay .overlay-icon {
+.product-box-grid .image-container .overlay .overlay-icon {
   color: white;
   font-size: 36px;
   position: absolute;
@@ -146,24 +160,36 @@
   -ms-transform: translate(-50%, -50%);
   text-align: center;
 }
-.product-box .city {
+.product-box-grid .info-container .city {
   font-family: "Pacifico", cursive;
 }
-.product-box .description {
+.product-box-grid .info-container .description {
   text-align: left;
   margin-left: 10px;
   font-family: "Cuprum", sans-serif;
   font-size: 12px;
 }
-.product-box .prices-container {
-  display: none;
+.product-box-grid .info-container .prices-container {
+  visibility: hidden;
+  display: flex;
+  font-family: "Cuprum", sans-serif;
+  color: black;
+  font-size: 11px;
 }
-.product-box .prices-container > div {
+.product-box-grid .info-container .prices-container span.fas {
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  line-height: 20px;
+  background-color: #cccccc;
+}
+.product-box-grid .info-container .prices-container > div {
   flex-basis: 100%;
   text-align: center;
 }
-.product-box .book {
-  display: none;
+.product-box-grid .book {
+  display: inline-block;
+  visibility: hidden;
   width: 98.5%;
   height: 34px;
   line-height: 34px;
@@ -174,9 +200,166 @@
   text-align: center;
   text-decoration: none;
   font-family: "Cuprum", sans-serif;
+}
+
+.product-box-list {
+  display: block;
+  width: 100%;
+  height: 80px;
+  margin: 10px;
+}
+.product-box-list:hover .image-container .overlay {
+  opacity: 1;
+}
+.product-box-list:hover {
+  box-shadow: inset 0 0 0 1px rgba(214, 214, 214, 0.5);
+}
+.product-box-list .image-container {
+  width: 145px;
+  height: 100%;
+  float: left;
+  position: relative;
+}
+.product-box-list .image-container img {
+  height: 100%;
+  width: 100%;
+  -webkit-clip-path: polygon(50% 0%, 100% 0, 100% 100%, 55% 100%, 50% 96%, 45% 100%, 0 100%, 0 0);
+  clip-path: polygon(50% 0%, 100% 0, 100% 100%, 55% 100%, 50% 96%, 45% 100%, 0 100%, 0 0);
+}
+.product-box-list .image-container .overlay {
   position: absolute;
+  top: 0;
   bottom: 0;
   left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: 0.3s ease;
+  background-color: rgba(17, 0, 0, 0.398);
+}
+.product-box-list .image-container .overlay .overlay-icon {
+  color: white;
+  font-size: 36px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+.product-box-list .info-container .city {
+  font-family: "Pacifico", cursive;
+}
+.product-box-list .info-container .description {
+  text-align: left;
+  margin-left: 10px;
+  font-family: "Cuprum", sans-serif;
+  font-size: 12px;
+}
+.product-box-list .info-container .prices-container {
+  display: none;
+}
+.product-box-list .info-container .prices-container > div {
+  flex-basis: 100%;
+  text-align: center;
+}
+.product-box-list .book {
+  display: none;
+  width: 100px;
+  height: 30px;
+  line-height: 30px;
+  background-color: #f00;
+  border: none;
+  color: black;
+  padding: 2px;
+  text-align: center;
+  text-decoration: none;
+  font-family: "Cuprum", sans-serif;
+}
+
+.footer {
+  width: 100%;
+  background-color: purple;
+  height: 160px;
+  color: white;
+  display: flex;
+  flex-wrap: nowrap;
+}
+.footer .contacts-social {
+  height: 100%;
+  width: 70%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.footer .contacts-social .contacts {
+  width: 100%;
+  height: 80%;
+  font-family: "Cuprum", sans-serif;
+  font-size: 12px;
+}
+.footer .contacts-social .contacts .address {
+  display: flex;
+  width: 100%;
+  margin: 5% 0 0 5%;
+}
+.footer .contacts-social .contacts .address .address-icon {
+  width: 12%;
+}
+.footer .contacts-social .contacts .address .address-text {
+  width: 80%;
+}
+.footer .contacts-social .contacts .phone {
+  display: flex;
+  width: 100%;
+  margin: 5% 0 0 5%;
+}
+.footer .contacts-social .contacts .phone .phone-icon {
+  width: 12%;
+}
+.footer .contacts-social .contacts .phone .phone-text {
+  width: 80%;
+}
+.footer .contacts-social .contacts .email {
+  display: flex;
+  width: 100%;
+  margin: 5% 0 0 5%;
+}
+.footer .contacts-social .contacts .email .email-icon {
+  width: 12%;
+}
+.footer .contacts-social .contacts .email .email-text {
+  width: 80%;
+}
+.footer .contacts-social .social {
+  text-align: center;
+  width: 100%;
+  height: 20%;
+}
+.footer .contacts-social .social a {
+  width: 25px;
+  height: 25px;
+  background-color: white;
+  color: purple;
+  font-weight: bold;
+  text-align: center;
+  line-height: 25px;
+  margin: 2px;
+  font-size: 20px;
+  text-decoration: none;
+}
+.footer .footer-logo-container {
+  width: 30%;
+  position: relative;
+}
+.footer .footer-logo-container .footer-logo {
+  width: 50%;
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+  float: right;
+  bottom: 3%;
+  right: 3%;
+  position: absolute;
 }
 
 /*!
@@ -3922,6 +4105,21 @@ readers do not read off random characters that represent icons */
 .fas {
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
+}
+
+/*!
+ * Font Awesome Free 5.0.10 by @fontawesome - https://fontawesome.com
+ * License - https://fontawesome.com/license (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
+ */
+@font-face {
+  font-family: "Font Awesome 5 Brands";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../../assets/webfonts/fa-brands-400.eot");
+  src: url("../../assets/webfonts/fa-brands-400.eot?#iefix") format("embedded-opentype"), url("../../assets/webfonts/fa-brands-400.woff2") format("woff2"), url("../../assets/webfonts/fa-brands-400.woff") format("woff"), url("../../assets/webfonts/fa-brands-400.ttf") format("truetype"), url("../../assets/webfonts/fa-brands-400.svg#fontawesome") format("svg");
+}
+.fab {
+  font-family: "Font Awesome 5 Brands";
 }
 
 /*# sourceMappingURL=../assets/css/stylesheets.css.map */

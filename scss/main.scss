@@ -1,7 +1,12 @@
 @import "variables";
 @import "partials/header";
-@import "partials/products-block";
-@import "partials/product";
+@import "partials/products-block-header";
+@import "partials/products-block-grid";
+@import "partials/products-block-list";
+@import "partials/product-grid";
+@import "partials/product-list";
+@import "partials/footer";
 
 @import "fontawesome/fontawesome";
 @import "fontawesome/fa-solid";
+@import "fontawesome/fa-brands";

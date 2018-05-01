@@ -1,0 +1,35 @@
+.products-block{
+
+    // Mostly fluid pattern
+    .boxing-grid{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: stretch;
+
+        .product-box-grid{
+            margin: 1%;
+            width: 96%;
+            //display: flex;
+
+            @media screen and (min-width: 1025px) {
+                width: 16%;
+            }
+
+            @media screen and (max-width: 1024px) {
+                width: 21%;
+            }
+
+            @media screen and (max-width: 768px) {
+                width: 29%;
+            }
+
+            @media screen and (max-width: 480px) {
+                width: 46%;
+            }
+    
+            @media screen and (max-width: 320px) {
+                width: 96%;
+            }
+        }
+    }
+}

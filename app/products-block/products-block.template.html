@@ -1,8 +1,9 @@
 <div class="products-block" >
     <div class="block-header">
+        <span ng-click="switch()" class="switch-layout fas fa-list-alt"></span>
         <span class="block-name">{{info.name}}</span>
     </div>
-    <div class="boxing">
-        <div class="product-box" ng-repeat="product in info.products" product-vertical product="product"></div>
+    <div class="boxing-{{layout}}">
+        <div class="product-box-{{layout}}" ng-repeat="product in info.products" product-vertical product="product"></div>
     </div>
 </div>
