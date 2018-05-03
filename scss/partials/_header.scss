@@ -1,40 +1,58 @@
-.header {
-    background-color: rgb(194, 194, 194);
+header[travel-header] {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
     height: 150px;
+    background-color: rgb(194, 194, 194);
+    z-index: 1;
+    -webkit-transition: height 0.5s;
+    transition: height 0.5s;
 
-    @media (min-width: $break-small-width) {
-        background-color: rgb(194, 194, 194);
-        height: 90px;
+    @include for-size(tablet-portrait-up) {
+        height: 100px;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
     }
 
     .header-logo{
-        height: 60%;
+        width: 100px;
+        height: auto;
 
-        @media (max-width: $break-small-width - 1) {
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-            position: relative;
-            top: 14px;
+        img{
+            width: 100%;
+            height: 100%;
         }
 
-        @media (min-width: $break-small-width) {
-            float: left;
-            height: 70%;
-            position: relative;
-            top: 15%;
-            left: 1%;
+        @include for-size(tablet-portrait-up) {
+            width: 50px;
+            height: auto;
         }
     }
 
     .header-title{
+        display: flex;
+        align-items: center;
+        justify-content: center;
         font-family: 'Pacifico', cursive;
         color: black;
         width: 100%;
+        height: 20%;
         text-align: center;
-        position: relative;
-        top: 20px;
-    }
-
-    
+        
+        @include for-size(tablet-portrait-up) {
+            justify-content: flex-start;
+            height: 50%;
+        }
+    }  
 }
+
+.travel-header-fix {
+    @include for-size(tablet-portrait-up) {
+        position: fixed;
+        top: 0;
+        height: 50px !important;
+    }
+  }

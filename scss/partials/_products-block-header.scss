@@ -1,21 +1,23 @@
 .products-block{
 
     .block-header{
-        color:red;
+        color: red;
         height: 30px;
         width: 100%;
         margin-top: 15px;
-        margin-bottom: 15px;
+        display: flex;
+        flex-wrap: nowrap;
 
         &:hover .switch-layout{
-            display: block;
+            visibility: visible;
             cursor: pointer;
         }
 
         .switch-layout{
-            position: absolute;
-            font-size: 16px;
-            display: none;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            visibility: hidden;
         }
 
         .block-name{
@@ -29,10 +31,10 @@
                 content: '';
                 display: table-cell;
                 position: relative;
-                top: 1em;
+                top: 50%;
                 width: 100%;
               }
-              &:before { right: 0.5%; }
+              //&:before { right: 0.5%; }
         }
     }
 }

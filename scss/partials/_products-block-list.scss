@@ -2,6 +2,15 @@
 
     // Mostly fluid pattern
     .boxing-list{
-        display: block;
+        display: flex;
+        flex-direction: column;
+
+        .product-box-list{
+            display: flex;
+            margin: 10px;
+            width: 100%;
+            height: 80px;
+            align-items: center;
+        }
     }
 }

@@ -1,0 +1,109 @@
+.product-box{
+
+    &:hover{
+        box-shadow: inset 0 0 0 1px rgba(214, 214, 214, 0.5);
+        cursor: pointer;
+    }
+
+    &:hover .image-container .overlay{
+        opacity: 1;
+    }
+
+    &:hover .info-container .city{
+        color: purple;
+    }
+
+    .image-container{
+        position: relative;
+        flex:initial;
+        //width: 100%;
+        //height: 100%;
+        
+        img{
+            height: 100%;
+            width: 100%;
+        }
+        .overlay{
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 100%;
+            width: 100%;
+            opacity: 0;
+            transition: .3s ease;
+            background-color: rgba(17, 0, 0, 0.398);
+
+            .overlay-icon{
+                color: white;
+                font-size: 36px;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                -ms-transform: translate(-50%, -50%);
+                text-align: center;
+            }
+        }
+    }
+
+    .info-container{
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        .city{
+            flex: initial;
+            font-family: 'Pacifico', cursive;
+            color: #4e004e;
+            font-weight: bold;
+        }
+
+        .description{
+            flex:1;
+            text-align: left;
+            font-family: 'Cuprum', sans-serif;
+            font-size: 12px;
+        }
+
+        .prices-container{
+            flex: initial;
+            display:flex;
+            justify-content: space-around;
+            font-family: 'Cuprum', sans-serif;
+            color: black;
+            font-size: 11px;
+
+            & span.fas{
+                width: 20px;
+                height: 20px;
+                text-align: center;
+                line-height: 20px;
+                background-color: #cccccc;
+            }
+
+            & > div {
+                border: solid 0.5px #cccccc;
+                text-align: center;
+            }
+        }
+    }
+
+    .book{
+        flex:initial;
+        //display: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #f00;
+        border: none;
+        color: rgb(0, 0, 0);
+        text-align: center;
+        text-decoration: none;
+        font-family: 'Cuprum', sans-serif;
+
+        &:hover {
+            color: white;
+        }
+    }
+}

@@ -12,18 +12,18 @@
         <script type="text/javascript" src="app/travelApp.js"></script>
         <script type="text/javascript" src="app/services/travel.service.js"></script>
 
+        <script type="text/javascript" src="app/header/travel-header.directive.js"></script>
+
         <script type="text/javascript" src="app/products-block/products-block.directive.js"></script>
 
         <script type="text/javascript" src="app/products/product.directive.js"></script>
     </head>
     <body ng-controller="travelController">
-        <header class="header">
-            <img class="header-logo" src="assets/images/logo/logo_large.png" />
-            <div class="header-title">Travel Agency</div>
-        </header>
+        <header travel-header></header>
         <section>
             <div products-block info="blocks.featured" layout="'list'" ></div>
             <div products-block info="blocks.algarve" layout="'grid'" ></div>
+            <div products-block info="blocks.alentejo" layout="'grid'" ></div>
         </section>
         <footer class="footer">
             <div class="contacts-social">
