@@ -5,6 +5,11 @@
         cursor: pointer;
     }
 
+    &:hover .image-container img{
+        -webkit-transform: scale(1.2) rotate(10deg);
+        transform: scale(1.2) rotate(10deg);
+    }
+
     &:hover .image-container .overlay{
         opacity: 1;
     }
@@ -13,9 +18,14 @@
         color: purple;
     }
 
+    &:hover .info-container .prices-container{
+        visibility: visible;
+    }
+
     .image-container{
         position: relative;
         flex:initial;
+        //transition: all 0.5s;
         //width: 100%;
         //height: 100%;
         
@@ -32,7 +42,6 @@
             height: 100%;
             width: 100%;
             opacity: 0;
-            transition: .3s ease;
             background-color: rgba(17, 0, 0, 0.398);
 
             .overlay-icon{
@@ -67,25 +76,39 @@
         }
 
         .prices-container{
+            visibility: hidden;
             flex: initial;
-            display:flex;
+            display: flex;
             justify-content: space-around;
-            font-family: 'Cuprum', sans-serif;
+            font-family: "Cuprum", sans-serif;
             color: black;
-            font-size: 11px;
+            font-size: 10px;
+            margin-bottom: 8px;
 
-            & span.fas{
-                width: 20px;
-                height: 20px;
-                text-align: center;
-                line-height: 20px;
-                background-color: #cccccc;
+            .price-single,
+            .price-group,
+            .price-inc{
+
+                height: 15px;
+                width: 30px;
+                display: flex;
+                justify-content: space-around;
+                border: solid 0.2px #e0e0e0;
+
+                span.icon {
+                    background-color: #e0e0e0;
+                }
+    
+                span{
+                    height: 100%;
+                    flex: 1;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
             }
 
-            & > div {
-                border: solid 0.5px #cccccc;
-                text-align: center;
-            }
+            
         }
     }
 

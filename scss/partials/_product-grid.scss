@@ -1,20 +1,20 @@
 .product-box-grid{
 
-    &:hover .info-container .prices-container{
-        visibility: visible;
-    }
-
     &:hover .book{
         visibility: visible;
     }
 
+    &:hover .image-container{
+        -webkit-clip-path: polygon(50% 0%, 100% 0, 100% 100%, 58% 100%, 50% 93%, 42% 100%, 0 100%, 0 0);
+        clip-path: polygon(50% 0%, 100% 0, 100% 100%, 58% 100%, 50% 93%, 42% 100%, 0 100%, 0 0);
+    }
+
     .image-container{
+        display: flex;
+        height: 45%;
         width: 100%;
-        img{
-            height: auto !important;
-            //-webkit-clip-path: polygon(50% 0%, 100% 0, 100% 100%, 55% 100%, 50% 96%, 45% 100%, 0 100%, 0 0);
-            //clip-path: polygon(50% 0%, 100% 0, 100% 100%, 55% 100%, 50% 96%, 45% 100%, 0 100%, 0 0);
-        }
+        -webkit-clip-path: polygon(50% 0%, 100% 0, 100% 100%, 55% 100%, 50% 96%, 45% 100%, 0 100%, 0 0);
+        clip-path: polygon(50% 0%, 100% 0, 100% 100%, 55% 100%, 50% 96%, 45% 100%, 0 100%, 0 0);
     }
 
     .info-container{
@@ -31,7 +31,7 @@
             font-size: 12px;
         }
 
-        .prices-container{
+        /*.prices-container{
             visibility: hidden;
             margin: 10px 0 10px 0;
 
@@ -48,7 +48,7 @@
                 border: solid 0.5px #cccccc;
                 text-align: center;
             }
-        }
+        }*/
     }
 
     .book{

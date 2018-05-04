@@ -14,7 +14,7 @@
                 },
                 templateUrl : "app/header/travel-header.template.html",
                 link: function(scope, element, attrs){
-                    var offsetTop = element[0].offsetTop;
+                    var offsetTop = 10;
                     var $w = angular.element($window);
                     $w.on('scroll', function (e) {
                         if ($w[0].pageYOffset >= offsetTop) {

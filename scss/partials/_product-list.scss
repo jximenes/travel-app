@@ -4,29 +4,28 @@
         height: 100%;
     }
 
+    &:hover .image-container{
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 42%, 93% 50%, 100% 58%, 100% 100%, 0 100%);
+        clip-path: polygon(0 0, 100% 0, 100% 45%, 95% 50%, 100% 55%, 100% 100%, 0 100%);
+    }
+
     .image-container{
         width: 120px;
         height: 100%;
-        
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 45%, 95% 50%, 100% 55%, 100% 100%, 0 100%);
+        clip-path: polygon(0 0, 100% 0, 100% 45%, 95% 50%, 100% 55%, 100% 100%, 0 100%);
+
         img{
             height: 100%;
             width: 100%;
-            -webkit-clip-path: polygon(50% 0%, 100% 0, 100% 100%, 55% 100%, 50% 96%, 45% 100%, 0 100%, 0 0);
-            clip-path: polygon(50% 0%, 100% 0, 100% 100%, 55% 100%, 50% 96%, 45% 100%, 0 100%, 0 0);
         }
     }
     
     .info-container{
         margin-left: 5px;
-        
 
-        .prices-container{
-            width: 27%;
-
-            & > div {
-                border: solid 0.5px #cccccc;
-                text-align: center;
-            }
+        .prices-container {
+            width: 140px;
         }
     }
 

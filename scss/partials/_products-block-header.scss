@@ -9,31 +9,40 @@
         flex-wrap: nowrap;
 
         &:hover .switch-layout{
-            visibility: visible;
+            display: flex;
             cursor: pointer;
         }
 
         .switch-layout{
+            flex: initial;
             font-size: 18px;
-            display: flex;
+            display: none;
+            justify-content: center;
             align-items: center;
-            visibility: hidden;
+        }
+
+        .h-line{
+            flex: 1;
+            display: flex;
+            margin-top: 13px;
+            margin-left: 6px;
+            margin-right: 6px;
+            border-top: 1px solid red;
+            height: 0px;
         }
 
         .block-name{
-            display: table;
-            white-space: nowrap;
-            float: right;
+            flex: initial;
             font-family: 'Pacifico', cursive;
 
-            &:before {
+            /*&:before {
                 border-top: 1px solid red;
                 content: '';
                 display: table-cell;
                 position: relative;
                 top: 50%;
                 width: 100%;
-              }
+              }*/
               //&:before { right: 0.5%; }
         }
     }

@@ -21,36 +21,40 @@
     <body ng-controller="travelController">
         <header travel-header></header>
         <section>
-            <div products-block info="blocks.featured" layout="'list'" ></div>
-            <div products-block info="blocks.algarve" layout="'grid'" ></div>
-            <div products-block info="blocks.alentejo" layout="'grid'" ></div>
+            <!--<div class="blocks-container">-->
+                <div products-block info="blocks.featured" layout="'list'" ></div>
+                <div products-block info="blocks.algarve" layout="'grid'" ></div>
+                <div products-block info="blocks.alentejo" layout="'grid'" ></div>
+            <!--</div>-->
         </section>
         <footer class="footer">
-            <div class="contacts-social">
-                <div class="contacts">
-                    <div class="address">
-                        <span class="address-icon fas fa-home"></span>
-                        <span class="address-text">Str. Mouzinho de Albuquerque</br>8000-000 Faro</span>
+            <div class="footer-container">
+                <div class="contacts-social">
+                    <div class="contacts">
+                        <div class="address">
+                            <span class="address-icon fas fa-home"></span>
+                            <span class="address-text">Str. Mouzinho de Albuquerque</br>8000-000 Faro</span>
+                        </div>
+                        <div class="phone">
+                            <span class="phone-icon fas fa-phone"></span>
+                            <span class="phone-text">+351 289 123 456</span>
+                        </div>
+                        <div class="email">
+                            <span class="email-icon fas fa-envelope"></span>
+                            <span class="email-text">info@travelagency.com</span>
+                        </div>
                     </div>
-                    <div class="phone">
-                        <span class="phone-icon fas fa-phone"></span>
-                        <span class="phone-text">+351 289 123 456</span>
-                    </div>
-                    <div class="email">
-                        <span class="email-icon fas fa-envelope"></span>
-                        <span class="email-text">info@travelagency.com</span>
+                    <div class="social">
+                        <a class="fab fa-facebook-f" href="#"></a>
+                        <a class="fab fa-twitter" href="#"></a>
+                        <a class="fab fa-pinterest" href="#"></a>
+                        <a class="fab fa-instagram" href="#"></a>
+                        <a class="fab fa-tumblr" href="#"></a>
                     </div>
                 </div>
-                <div class="social">
-                    <a class="fab fa-facebook-f" href="#"></a>
-                    <a class="fab fa-twitter" href="#"></a>
-                    <a class="fab fa-pinterest" href="#"></a>
-                    <a class="fab fa-instagram" href="#"></a>
-                    <a class="fab fa-tumblr" href="#"></a>
+                <div class="footer-logo-container">
+                    <img class="footer-logo" src="assets/images/logo/logo_large.png" />
                 </div>
-            </div>
-            <div class="footer-logo-container">
-                <img class="footer-logo" src="assets/images/logo/logo_large.png" />
             </div>
         </footer>
     </body>
