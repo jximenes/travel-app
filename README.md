@@ -3,15 +3,11 @@
 	npm install sass -g
 	npm install http-server -g
 
-## install node dependencies
-	npm install
-
-## install bower dependencies
+## install bower dependencies (angularjs)
 	bower install
 	
 ## run sass pre-processor
-	cd scss
-	sass main.scss ../assets/css/stylesheets.css
+	sass scss/main.scss assets/css/stylesheets.css
 
 ## run web server
 	http-server -o
