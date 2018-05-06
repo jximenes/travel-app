@@ -86,8 +86,8 @@ header[travel-header] .header-container .header-title {
 .products-block .block-header {
   color: red;
   height: 30px;
-  width: 96%;
-  margin-left: 2%;
+  width: 98%;
+  margin-left: 1%;
   margin-top: 15px;
   display: flex;
   flex-wrap: nowrap;
@@ -283,7 +283,7 @@ header[travel-header] .header-container .header-title {
 }
 .products-block .boxing-list .product-box-list {
   display: flex;
-  margin: 10px;
+  margin: 10px 0 10px 0;
   width: 100%;
   height: 80px;
   align-items: center;
@@ -324,8 +324,8 @@ header[travel-header] .header-container .header-title {
   height: 100%;
 }
 .product-box-list:hover .image-container {
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 42%, 93% 50%, 100% 58%, 100% 100%, 0 100%);
-  clip-path: polygon(0 0, 100% 0, 100% 45%, 95% 50%, 100% 55%, 100% 100%, 0 100%);
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 42%, 92% 50%, 100% 58%, 100% 100%, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 42%, 92% 50%, 100% 58%, 100% 100%, 0 100%);
 }
 .product-box-list .image-container {
   width: 120px;
