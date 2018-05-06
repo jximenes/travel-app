@@ -1,10 +1,10 @@
 <div class="products-block" >
     <div class="block-header">
-        <span ng-click="switch()" class="switch-layout fas fa-list-alt"></span>
+        <span ng-click="switch()" class="switch-layout" ng-class="layout=='grid' ? 'fas fa-list-alt' : 'fas fa-table'"></span>
         <hr class="h-line">
         <span class="block-name">{{info.name}}</span>
     </div>
     <div class="boxing-{{layout}}">
-        <div class="product-box product-box-{{layout}}" ng-repeat="product in info.products" product-vertical product="product"></div>
+        <div class="product-box-{{layout}}" ng-repeat="product in info.products" product-vertical product="product"></div>
     </div>
 </div>

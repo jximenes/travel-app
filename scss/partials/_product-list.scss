@@ -1,4 +1,5 @@
 .product-box-list{
+    @extend .product-box;
 
     &:hover .book{
         height: 100%;

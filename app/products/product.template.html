@@ -9,15 +9,15 @@
         <div class="city">{{ product.city }}</div>
         <div class="description">{{ product.description }}</div>
         <div class="prices-container">
-            <div class="price-single">
+            <div class="price-single" ng-if="product.price_single">
                 <span class="icon fas fa-user"></span>
                 <span class="price">{{product.price_single}}</span>
             </div>
-            <div class="price-group">
+            <div class="price-group"  ng-if="product.price_group">
                 <span class="icon fas fa-users"></span>
                 <span class="price">{{product.price_group}}</span>
             </div>
-            <div class="price-inc">
+            <div class="price-inc"  ng-if="product.price_inc">
                 <span class="icon fas fa-user-plus"></span>
                 <span class="price">{{product.price_inc}}</span>
             </div>

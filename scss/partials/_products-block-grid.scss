@@ -10,24 +10,24 @@
         .product-box-grid{
             display: flex;
             flex-direction: column;
-            width: 96%;
+            width: 98%;
             margin: 1%;
             //display: flex;
 
             @include for-size(phone-medium-up) {
-                width: 46%;
+                width: 48%;
             }
 
             @include for-size(tablet-portrait-up) {
-                width: 29%;
+                width: 31%;
             }
 
             @include for-size(tablet-landscape-up) {
-                width: 21%;
+                width: 23%;
             }
 
             @include for-size(desktop-up) {
-                width: 16%;
+                width: 18%;
             }
         }
     }

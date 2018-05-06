@@ -30,7 +30,6 @@
                                 city: "Albufeira",
                                 description: "Lorem ipsum dolor sit amet",
                                 price_single: "15€",
-                                price_group: "10€",
                                 price_inc: "18€",
                                 image: "assets/images/places/albufeira_1024w.jpg"
                             },
@@ -39,7 +38,6 @@
                                 description: "Lorem ipsum dolor sit amet, eu nec brute vocibus qualisque",
                                 price_single: "15€",
                                 price_group: "10€",
-                                price_inc: "18€",
                                 image: "assets/images/places/sagres_1024w.jpg"
                             },
                             {

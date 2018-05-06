@@ -13,13 +13,7 @@
                 scope:{
                     product: "="
                 },
-                templateUrl : "app/products/product.template.html",
-                controller: function(){
-
-                },
-                link: function(scope, element, attrs){
-                    
-                }
+                templateUrl : "app/products/product.template.html"
             };
             return directive;
         }]);

@@ -1,4 +1,5 @@
 .product-box-grid{
+    @extend .product-box;
 
     &:hover .book{
         visibility: visible;
@@ -30,25 +31,6 @@
             font-family: 'Cuprum', sans-serif;
             font-size: 12px;
         }
-
-        /*.prices-container{
-            visibility: hidden;
-            margin: 10px 0 10px 0;
-
-
-            & span.fas{
-                width: 20px;
-                height: 20px;
-                text-align: center;
-                line-height: 20px;
-                background-color: #cccccc;
-            }
-
-            & > div {
-                border: solid 0.5px #cccccc;
-                text-align: center;
-            }
-        }*/
     }
 
     .book{

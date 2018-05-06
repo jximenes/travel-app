@@ -3,14 +3,17 @@
     .block-header{
         color: red;
         height: 30px;
-        width: 100%;
+        width: 96%;
+        margin-left: 2%;
         margin-top: 15px;
         display: flex;
         flex-wrap: nowrap;
 
-        &:hover .switch-layout{
-            display: flex;
-            cursor: pointer;
+        @include for-size(tablet-landscape-up) {
+            &:hover .switch-layout{
+                display: flex;
+                cursor: pointer;
+            }
         }
 
         .switch-layout{
@@ -19,6 +22,7 @@
             display: none;
             justify-content: center;
             align-items: center;
+            color: gray;
         }
 
         .h-line{
@@ -34,16 +38,6 @@
         .block-name{
             flex: initial;
             font-family: 'Pacifico', cursive;
-
-            /*&:before {
-                border-top: 1px solid red;
-                content: '';
-                display: table-cell;
-                position: relative;
-                top: 50%;
-                width: 100%;
-              }*/
-              //&:before { right: 0.5%; }
         }
     }
 }

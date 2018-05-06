@@ -2,3 +2,14 @@
     margin: 0;
     padding: 0;
 }
+
+.limit-width,
+.products-block{
+    max-width: 1024px;
+}
+
+.blocks-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
