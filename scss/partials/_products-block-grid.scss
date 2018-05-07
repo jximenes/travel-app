@@ -1,6 +1,7 @@
 .products-block{
 
     // Mostly fluid pattern
+    // I used mostly fluid pattern for grid view with fixed width for larger viewports, and flex layout mode to arrange items on containers in most cases (instead floats).
     .boxing-grid{
         display: flex;
         flex-wrap: wrap;
@@ -12,7 +13,6 @@
             flex-direction: column;
             width: 98%;
             margin: 1%;
-            //display: flex;
 
             @include for-size(phone-medium-up) {
                 width: 48%;

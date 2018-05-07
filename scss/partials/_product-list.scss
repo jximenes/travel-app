@@ -1,13 +1,27 @@
 .product-box-list{
+    // extends product-box and override or apply new css rules
     @extend .product-box;
 
-    &:hover .book{
-        height: 100%;
+    @keyframes image-animation-list{
+        0% {
+            -webkit-clip-path: polygon(0 0, 100% 0, 100% 45%, 95% 50%, 100% 55%, 100% 100%, 0 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 45%, 95% 50%, 100% 55%, 100% 100%, 0 100%);
+        }
+
+        100% {
+            -webkit-clip-path: polygon(0 0, 100% 0, 100% 42%, 92% 50%, 100% 58%, 100% 100%, 0 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 42%, 92% 50%, 100% 58%, 100% 100%, 0 100%);
+        }
     }
 
     &:hover .image-container{
-        -webkit-clip-path: polygon(0 0, 100% 0, 100% 42%, 92% 50%, 100% 58%, 100% 100%, 0 100%);
-        clip-path: polygon(0 0, 100% 0, 100% 42%, 92% 50%, 100% 58%, 100% 100%, 0 100%);
+        // image container triangle animation 
+        // retain the style values that is set by the last keyframe (forwards)
+        animation: image-animation-list 0.2s 1 forwards;
+    }
+
+    &:hover .book{
+        height: 100%;
     }
 
     .image-container{

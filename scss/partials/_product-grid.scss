@@ -1,13 +1,25 @@
 .product-box-grid{
+    // extends product-box and override or apply new css rules
     @extend .product-box;
 
-    &:hover .book{
-        visibility: visible;
+    @keyframes image-animation-grid{
+        0% {
+            -webkit-clip-path: polygon(50% 0%, 100% 0, 100% 100%, 55% 100%, 50% 96%, 45% 100%, 0 100%, 0 0);
+            clip-path: polygon(50% 0%, 100% 0, 100% 100%, 55% 100%, 50% 96%, 45% 100%, 0 100%, 0 0);
+        }
+
+        100% {
+            -webkit-clip-path: polygon(50% 0%, 100% 0, 100% 100%, 58% 100%, 50% 93%, 42% 100%, 0 100%, 0 0);
+            clip-path: polygon(50% 0%, 100% 0, 100% 100%, 58% 100%, 50% 93%, 42% 100%, 0 100%, 0 0);
+        }
     }
 
     &:hover .image-container{
-        -webkit-clip-path: polygon(50% 0%, 100% 0, 100% 100%, 58% 100%, 50% 93%, 42% 100%, 0 100%, 0 0);
-        clip-path: polygon(50% 0%, 100% 0, 100% 100%, 58% 100%, 50% 93%, 42% 100%, 0 100%, 0 0);
+        animation: image-animation-grid 0.2s 1 forwards;
+    }
+
+    &:hover .book{
+        visibility: visible;
     }
 
     .image-container{

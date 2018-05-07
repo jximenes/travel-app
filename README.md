@@ -18,6 +18,9 @@
 - https://developers.google.com/web/fundamentals/design-and-ux/responsive
 - I used "mostly fluid" pattern for grid view with fixed width for larger viewports, and flex layout mode to arrange items on containers in most cases.
 
+### fav icons
+- https://www.fellowshipproductions.co.uk/create-favicons-touch-icons-website
+
 ### responsive web design using flex. mobile-first
 - https://internetingishard.com/html-and-css/responsive-design
 - https://internetingishard.com/html-and-css/flexbox

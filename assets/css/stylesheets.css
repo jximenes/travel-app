@@ -120,6 +120,9 @@ header[travel-header] .header-container .header-title {
   font-family: "Pacifico", cursive;
 }
 
+/**
+* product box base css. will be extended by product-grid and product-list 
+*/
 .product-box:hover, .product-box-list:hover, .product-box-grid:hover {
   box-shadow: inset 0 0 0 1px rgba(214, 214, 214, 0.5);
   cursor: pointer;
@@ -127,6 +130,7 @@ header[travel-header] .header-container .header-title {
 .product-box:hover .image-container img, .product-box-list:hover .image-container img, .product-box-grid:hover .image-container img {
   -webkit-transform: scale(1.5) rotate(10deg);
   transform: scale(1.5) rotate(10deg);
+  -ms-transform: scale(1.5) rotate(10deg);
 }
 .product-box:hover .image-container .overlay, .product-box-list:hover .image-container .overlay, .product-box-grid:hover .image-container .overlay {
   opacity: 1;
@@ -140,6 +144,7 @@ header[travel-header] .header-container .header-title {
 .product-box .image-container, .product-box-list .image-container, .product-box-grid .image-container {
   position: relative;
   flex: initial;
+  overflow: hidden;
 }
 .product-box .image-container img, .product-box-list .image-container img, .product-box-grid .image-container img {
   height: 100%;
@@ -154,7 +159,7 @@ header[travel-header] .header-container .header-title {
   height: 100%;
   width: 100%;
   opacity: 0;
-  background-color: rgba(17, 0, 0, 0.398);
+  background-color: rgba(17, 0, 0, 0.268);
 }
 .product-box .image-container .overlay .overlay-icon, .product-box-list .image-container .overlay .overlay-icon, .product-box-grid .image-container .overlay .overlay-icon {
   color: white;
@@ -229,6 +234,7 @@ header[travel-header] .header-container .header-title {
   justify-content: center;
 }
 .product-box .book, .product-box-list .book, .product-box-grid .book {
+  position: relative;
   flex: initial;
   display: flex;
   align-items: center;
@@ -239,6 +245,21 @@ header[travel-header] .header-container .header-title {
   text-align: center;
   text-decoration: none;
   font-family: "Cuprum", sans-serif;
+}
+.product-box .book::after, .product-box-list .book::after, .product-box-grid .book::after {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: rgba(146, 0, 0, 0.337);
+  transform-origin: left;
+  transition: width 0.25s ease;
+  z-index: 0;
+}
+.product-box .book:hover::after, .product-box-list .book:hover::after, .product-box-grid .book:hover::after {
+  width: 100%;
 }
 .product-box .book:hover, .product-box-list .book:hover, .product-box-grid .book:hover {
   color: white;
@@ -289,12 +310,21 @@ header[travel-header] .header-container .header-title {
   align-items: center;
 }
 
-.product-box-grid:hover .book {
-  visibility: visible;
+@keyframes image-animation-grid {
+  0% {
+    -webkit-clip-path: polygon(50% 0%, 100% 0, 100% 100%, 55% 100%, 50% 96%, 45% 100%, 0 100%, 0 0);
+    clip-path: polygon(50% 0%, 100% 0, 100% 100%, 55% 100%, 50% 96%, 45% 100%, 0 100%, 0 0);
+  }
+  100% {
+    -webkit-clip-path: polygon(50% 0%, 100% 0, 100% 100%, 58% 100%, 50% 93%, 42% 100%, 0 100%, 0 0);
+    clip-path: polygon(50% 0%, 100% 0, 100% 100%, 58% 100%, 50% 93%, 42% 100%, 0 100%, 0 0);
+  }
 }
 .product-box-grid:hover .image-container {
-  -webkit-clip-path: polygon(50% 0%, 100% 0, 100% 100%, 58% 100%, 50% 93%, 42% 100%, 0 100%, 0 0);
-  clip-path: polygon(50% 0%, 100% 0, 100% 100%, 58% 100%, 50% 93%, 42% 100%, 0 100%, 0 0);
+  animation: image-animation-grid 0.2s 1 forwards;
+}
+.product-box-grid:hover .book {
+  visibility: visible;
 }
 .product-box-grid .image-container {
   display: flex;
@@ -320,12 +350,21 @@ header[travel-header] .header-container .header-title {
   height: 34px;
 }
 
-.product-box-list:hover .book {
-  height: 100%;
+@keyframes image-animation-list {
+  0% {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 45%, 95% 50%, 100% 55%, 100% 100%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 45%, 95% 50%, 100% 55%, 100% 100%, 0 100%);
+  }
+  100% {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 42%, 92% 50%, 100% 58%, 100% 100%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 42%, 92% 50%, 100% 58%, 100% 100%, 0 100%);
+  }
 }
 .product-box-list:hover .image-container {
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 42%, 92% 50%, 100% 58%, 100% 100%, 0 100%);
-  clip-path: polygon(0 0, 100% 0, 100% 42%, 92% 50%, 100% 58%, 100% 100%, 0 100%);
+  animation: image-animation-list 0.2s 1 forwards;
+}
+.product-box-list:hover .book {
+  height: 100%;
 }
 .product-box-list .image-container {
   width: 120px;
@@ -452,7 +491,7 @@ header[travel-header] .header-container .header-title {
 }
 @media (min-width: 600px) {
   .footer .footer-container .footer-logo-container {
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
   }
 }
